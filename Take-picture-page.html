@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="\UTF-8">
+	<title>Vamos tirar uma foto.</title>
+	<link rel="stylesheet" type="text/css" href="_css/style.css">
+	<script language="JavaScript" src="_js/functions.js"></script>
+</head>
+<body onload="init();>
+	<div id="interface">
+		<header id="cabecalho">
+			<img src="_imagens/cred-system-logo.png">
+			<div></div>
+		</header>
+		<section id="lado-esquerdo">
+			<p>Posicione-se ao centro da tela.<br>Quando estiver pronto, pressione avançar.</p>
+		</section>
+		<aside id="lado-direito">
+			<div>
+				<button onclick="startWebcam();">Start WebCam</button> 
+			    <button onclick="snapshot();">Take Snapshot</button> 
+			    <video onclick="snapshot(this);" id="videoElement" autoplay></video>
+				<script>
+					var video = document.getElementById('videoElement');
+      				var webcamStream;
+      				vendorURL = window.URL || window.webkitURL;
+      				navigator.getMedia = navigator.getUserMedia ||
+    				navigator.webkitGetUserMedia || /* substituted `w` for `W`, `k` for `K` */
+    				navigator.msGetUserMedia;
+					function startWebcam() {
+				        if (navigator.getUserMedia) {
+				           navigator.getUserMedia (
+
+				              // constraints
+				              {
+				                 video: true,
+				                 audio: false
+				              },
+
+				              // successCallback
+				              function(localMediaStream) {
+                 			  video.src = window.URL.createObjectURL(localMediaStream);
+                 			  video.play();
+              				},
+
+				              // errorCallback
+				              function(err) {
+				                 console.log("The following error occured: " + err);
+				              }
+				           );
+				        } else {
+				           console.log("getUserMedia not supported");
+				    	}  
+			    	}
+			    	  var canvas, ctx;
+
+				      function init() {
+				        // Get the canvas and obtain a context for
+				        // drawing in it
+				        canvas = document.getElementById("myCanvas");
+				        ctx = canvas.getContext('2d');
+				      }
+
+				      function snapshot() {
+				         // Draws current image from the video element into the canvas
+				        ctx.drawImage(video, 0,0, canvas.width, canvas.height);
+				      }
+				</script>	
+			</div>
+		</aside>
+		<button class="go-to-cancel" onclick="location.href='Cancel-page.html'">Cancelar</button>
+		<button class="avancar" onclick="location.href='Select-card.html'">Avançar</button>
+	</div>
+</body>
+</html>

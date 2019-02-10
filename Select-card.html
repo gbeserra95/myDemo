@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="\UTF-8">
+	<title>Selecione seu cartão.</title>
+	<link rel="stylesheet" type="text/css" href="_css/style.css">
+	<script language="JavaScript" src="_js/functions.js"></script>
+</head>
+<body>
+	<div id="interface">
+		<header id="cabecalho">
+			<img src="_imagens/cred-system-logo.png">
+			<div></div>
+		</header>
+		<section id="conteudo">
+			<p>Selecione o modelo que você deseja emitir.</p>
+			<img class="imagem-cartoes" id="card1" src="_imagens/cartao1.png" onclick="destacarCartao(1)">
+			<img class="imagem-cartoes" id="card2" src="_imagens/cartao2.png" onclick="destacarCartao(2)">
+			<img class="imagem-cartoes" id="card3" src="_imagens/cartao3.png" onclick="destacarCartao(3)">
+			<button class="go-to-cancel" onclick="location.href='Cancel-page.html'">Cancelar</button>
+			<button class="avancar" id="go-to-password" disabled="true" onclick="location.href='Type-password.html'">Avançar</button>
+		</section>
+	</div>
+</body>
+</html>

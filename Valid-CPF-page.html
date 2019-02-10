@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="\UTF-8">
+	<title>Cliente encontrado!</title>
+	<link rel="stylesheet" type="text/css" href="_css/style.css">
+	<script language="JavaScript" src="_js/functions.js"></script>
+</head>
+<body onload="carregarCPF()">
+	<div id="interface">
+		<header id="cabecalho">
+			<img src="_imagens/cred-system-logo.png">
+			<div></div>
+		</header>
+		<section id="conteudo">
+			<p>Olá, <strong><span id="cpf-text"></span></strong><br> Vamos iniciar tirando uma foto.<br> Pressione avançar e siga as instruções para captura na próxima tela.</p>
+			<button class="go-to-cancel" onclick="location.href='Cancel-page.html'">Cancelar</button>
+			<button class="avancar" onclick="location.href='Take-picture-page.html'">Avançar</button>
+		</section>
+	</div>
+</body>
+</html>
